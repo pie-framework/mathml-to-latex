@@ -1,5 +1,7 @@
 export const allMathOperatorsByChar: Record<string, string> = {
-  _: '\\underline',
+  /* eslint-disable prettier/prettier */
+  '_': '\\underline',
+  /* eslint-enable prettier/prettier */
   '&#x23E1;': '\\underbrace',
   '&#x23E0;': '\\overbrace',
   '&#x23DF;': '\\underbrace',

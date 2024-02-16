@@ -1,8 +1,9 @@
+export const mathNumberByGlyphSpecial: Record<string, string> = {
+  '"ⁿ"': '^{n}',
+  '"ₙ"': '_{n}',
+};
+
 export const mathNumberByGlyph: Record<string, string> = {
-  /* eslint-disable prettier/prettier */
-  'ⁿ': '^{n}',
-  'ₙ': '_{n}',
-  /* eslint-enable prettier/prettier */
   '₀': '_{0}',
   '₁': '_{1}',
   '₂': '_{2}',

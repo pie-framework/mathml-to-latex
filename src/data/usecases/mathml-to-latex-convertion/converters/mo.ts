@@ -5,7 +5,9 @@ import {
   HashUTF8ToLtXConverter,
   allMathOperatorsByChar,
   allMathOperatorsByGlyph,
-  mathNumberByGlyph, allMathOperatorsByGlyphSpecial, mathNumberByGlyphSpecial,
+  mathNumberByGlyph,
+  allMathOperatorsByGlyphSpecial,
+  mathNumberByGlyphSpecial,
 } from '../../../../syntax';
 
 export class MO implements ToLaTeXConverter {
@@ -18,6 +20,13 @@ export class MO implements ToLaTeXConverter {
   convert(): string {
     const normalizedValue = normalizeWhiteSpaces(this._mathmlElement.value);
     const trimmedValue = normalizedValue.trim();
+
+    if (this._mathmlElement.attributes['data-mjx-texclass'] === 'OPEN' && trimmedValue === '|') {
+      return `\\left|`;
+    }
+    if (this._mathmlElement.attributes['data-mjx-texclass'] === 'CLOSE' && trimmedValue === '|') {
+      return `\\right|`;
+    }
 
     return Operator.operate(trimmedValue);
   }

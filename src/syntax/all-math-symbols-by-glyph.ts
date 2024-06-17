@@ -161,7 +161,7 @@ export const allMathSymbolsByGlyphSpecial: Record<string, string> = {
   '"𝚟"': 'v',
 };
 export const allMathSymbolsByGlyph: Record<string, string> = {
-  ' ': '\\textrm{ }',
+  ' ': '\\',
   '∃': '\\exists',
   '∀': '\\forall',
   '⇔': '\\iff',

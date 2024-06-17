@@ -1,5 +1,5 @@
 export const allMathSymbolsByChar: Record<string, string> = {
-  '&#xA0;': '\\textrm{ }',
+  '&#xA0;': '\\',
   '&#x2203;': '\\exists',
   '&#x2200;': '\\forall',
   '&#x21D4;': '\\iff',

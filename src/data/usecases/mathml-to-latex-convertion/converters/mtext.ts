@@ -16,7 +16,6 @@ export class MText implements ToLaTeXConverter {
       .map<Char>((char) => {
         // if is a letter, number or space, return it
         if (/^[a-zA-Z0-9]$/.test(char) || char == ' ')
-         
           return {
             value: char,
             isAlphanumeric: true,

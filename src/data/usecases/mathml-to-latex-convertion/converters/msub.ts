@@ -19,7 +19,7 @@ export class MSub implements ToLaTeXConverter {
     const base = mathMLElementToLaTeXConverter(children[0]).convert();
     const subscript = mathMLElementToLaTeXConverter(children[1]).convert();
 
-    if(base==='log') {
+    if (base === 'log') {
       return `\\${base}_${new BracketWrapper().wrap(subscript)}`;
     }
 

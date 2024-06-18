@@ -20,6 +20,8 @@ export class GenericUnderOver implements ToLaTeXConverter {
     const content = mathMLElementToLaTeXConverter(children[0]).convert();
     const accent = mathMLElementToLaTeXConverter(children[1]).convert();
 
+    // console.log('\nGenericUnderOver convert this._mathmlElement = ', this._mathmlElement, { content, accent });
+
     return this._applyCommand(content, accent);
   }
 
@@ -37,6 +39,14 @@ class UnderOverSetter {
   }
 
   apply(content: string, accent: string) {
+    // console.log(
+    //   'UnderOverSetter apply latexAccents.includes(accent)',
+    //   latexAccents.includes(accent),
+    //   '?',
+    //   `${accent}{${content}}`,
+    //   ':',
+    //   `${this._defaultCommand}{${accent}}{${content}}`,
+    // );
     return latexAccents.includes(accent) ? `${accent}{${content}}` : `${this._defaultCommand}{${accent}}{${content}}`;
   }
 

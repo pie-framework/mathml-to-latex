@@ -18,6 +18,12 @@ export class MSup implements ToLaTeXConverter {
 
     const base = mathMLElementToLaTeXConverter(children[0]).convert();
     const exponent = mathMLElementToLaTeXConverter(children[1]).convert();
+    const prime = "'";
+
+    if (exponent === prime) {
+      // This is a prime symbol, not a general exponent
+      return `${base}${prime}`;
+    }
 
     return `${base}^${new BracketWrapper().wrap(exponent)}`;
   }

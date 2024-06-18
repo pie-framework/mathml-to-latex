@@ -28,6 +28,7 @@ export class MEnclose implements ToLaTeXConverter {
     if (['verticalstrike', 'horizontalstrike'].includes(this._notation)) return `\\hcancel{${latexJoinedChildren}}`;
     if (this._notation === 'madruwb') return `\\underline{${latexJoinedChildren}\\right|}`;
     if (this._notation === 'phasorangle') return `{\\angle \\underline{${latexJoinedChildren}}}`;
+    if (this._notation === 'longdiv') return `\\longdiv{${latexJoinedChildren}}`;
 
     return `\\overline{\\left.\\right)${latexJoinedChildren}}`;
   }

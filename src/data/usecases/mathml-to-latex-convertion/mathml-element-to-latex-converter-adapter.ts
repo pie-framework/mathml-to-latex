@@ -12,6 +12,7 @@ export class MathMLElementToLatexConverterAdapter {
   toLatexConverter(): ToLaTeXConverter {
     const { name } = this._mathMLElement;
     const Converter = fromMathMLElementToLatexConverter[name] || ToLatexConverters.GenericSpacingWrapper;
+    // console.log('\n\ntoLatexConverter _mathMLElement', this._mathMLElement);
 
     return new Converter(this._mathMLElement);
   }

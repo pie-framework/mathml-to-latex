@@ -1,6 +1,6 @@
 import { ToLaTeXConverter } from '../../../../domain/usecases/to-latex-converter';
 import { MathMLElement } from '../../../protocols/mathml-element';
-import { mathMLElementToLaTeXConverter, ParenthesisWrapper, BracketWrapper } from '../../../helpers';
+import { mathMLElementToLaTeXConverter, BracketWrapper } from '../../../helpers';
 import { InvalidNumberOfChildrenError } from '../../../errors';
 
 export class MSup implements ToLaTeXConverter {
@@ -25,7 +25,6 @@ export class MSup implements ToLaTeXConverter {
       return `${base}${prime}`;
     }
 
-    // General superscript case
-    return `${new ParenthesisWrapper().wrapIfMoreThanOneChar(base)}^${new BracketWrapper().wrap(exponent)}`;
+    return `${base}^${new BracketWrapper().wrap(exponent)}`;
   }
 }

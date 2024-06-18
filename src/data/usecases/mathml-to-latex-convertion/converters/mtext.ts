@@ -15,7 +15,8 @@ export class MText implements ToLaTeXConverter {
     return [...value]
       .map<Char>((char) => {
         // if is a letter, number or space, return it
-        if (/^[a-zA-Z0-9]$/.test(char) || char === ' ')
+        if (/^[a-zA-Z0-9]$/.test(char) || char == ' ')
+         
           return {
             value: char,
             isAlphanumeric: true,
@@ -73,6 +74,8 @@ class TextCommand {
     switch (this._mathvariant) {
       case 'bold':
         return ['\\textbf'];
+      case 'log':
+        return ['\\log'];
       case 'italic':
         return ['\\textit'];
       case 'bold-italic':

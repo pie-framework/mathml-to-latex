@@ -23,6 +23,7 @@ export class MSub implements ToLaTeXConverter {
       return `\\${base}_${new BracketWrapper().wrap(subscript)}`;
     }
 
-    return `${new ParenthesisWrapper().wrapIfMoreThanOneChar(base)}_${new BracketWrapper().wrap(subscript)}`;
+    return `${base}_${new BracketWrapper().wrap(subscript)}`;
+    // return `${new ParenthesisWrapper().wrapIfMoreThanOneChar(base)}_${new BracketWrapper().wrap(subscript)}`;
   }
 }

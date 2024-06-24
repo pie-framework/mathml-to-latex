@@ -353,4 +353,5 @@ export const allMathSymbolsByGlyph: Record<string, string> = {
   '▫': '\\square',
   '●': '\\circle',
   '”': '\\"',
+  '◻': '\\square',
 };
